@@ -1,22 +1,47 @@
-WatchToRead
+# WatchToRead
 
-Turn any YouTube video into a structured eBook — tailored to your level.
+> Turn any YouTube video into a structured eBook — tailored to your level.
 
-Demo
+## Demo
 🔗 Coming soon
 
-What It Does
+---
+
+## What It Does
+
 YouTube is full of great educational content, but video is passive, unsearchable, and easy to forget. WatchToRead takes any YouTube video and converts it into a clean, structured PDF eBook — customized for how deep you want to go.
-Input: YouTube URL + audience level
-Output: PDF with chapters, key concepts, and summaries
 
-Audience Levels
-LevelWho It's For🟢 ELI5No background, explain like I'm 12🔵 BeginnerNew to the topic🟡 IntermediateFamiliar with the basics🔴 ExpertJust the dense, technical content
+**Input:** YouTube URL + audience level  
+**Output:** PDF with chapters, key concepts, and summaries
 
-Tech Stack
-LayerTechnologyBackendPython, FlaskAI ProcessingClaude API (Anthropic)Transcript ExtractionYouTube Transcript APIPDF GenerationReportLabDeploymentGoogle Cloud Run
+---
 
-Architecture
+## Audience Levels
+
+| Level | Who It's For |
+|---|---|
+| 🟢 ELI5 | No background, explain like I'm 12 |
+| 🔵 Beginner | New to the topic |
+| 🟡 Intermediate | Familiar with the basics |
+| 🔴 Expert | Just the dense, technical content |
+
+---
+
+## Tech Stack
+
+| Layer | Technology |
+|---|---|
+| Backend | Python, Flask |
+| AI Processing | Claude API (Anthropic) |
+| Transcript Extraction | YouTube Transcript API |
+| PDF Generation | ReportLab |
+| Deployment | Google Cloud Run |
+
+---
+
+## Architecture
+
+```
 User Input (URL + difficulty level)
         ↓
 Flask App — coordinates the pipeline
@@ -26,11 +51,17 @@ Flask App — coordinates the pipeline
 └── ebook.py     → render structured content as PDF
         ↓
 PDF Download
-Each module has a single responsibility. Swapping Claude for another LLM only touches claude.py. Changing the output format only touches ebook.py.
+```
 
-Getting Started
-bash# Clone the repo
-git clone https://github.com/PengLin-Zilv/watch-to-read.git
+Each module has a single responsibility. Swapping Claude for another LLM only touches `claude.py`. Changing the output format only touches `ebook.py`.
+
+---
+
+## Getting Started
+
+```bash
+# Clone the repo
+git clone https://github.com/yourusername/watch-to-read.git
 cd watch-to-read
 
 # Create and activate virtual environment
@@ -46,8 +77,13 @@ cp .env.example .env
 
 # Run locally
 python app.py
+```
 
-Project Structure
+---
+
+## Project Structure
+
+```
 watch-to-read/
 ├── app.py                 # Flask entry point
 ├── config.py              # Configuration and environment
@@ -60,8 +96,16 @@ watch-to-read/
 ├── templates/
 │   └── index.html         # Frontend
 └── outputs/               # Generated PDFs (git-ignored)
+```
 
-Environment Variables
-bashANTHROPIC_API_KEY=your_key_here
+---
+
+## Environment Variables
+
+```bash
+ANTHROPIC_API_KEY=your_key_here
+```
+
+---
 
 Built by Peng — CS @ Syracuse University
