@@ -2,8 +2,8 @@
 
 > Turn any YouTube video into a structured eBook — tailored to your level.
 
-## Demo
-🔗 Coming soon
+## Simple Frontend Demo
+![alt text](image.png)
 
 ---
 
