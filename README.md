@@ -3,7 +3,7 @@
 > Turn any YouTube video into a structured eBook — tailored to your level.
 
 ## Simple Frontend Demo
-![alt text](image.png)
+<img width="1357" height="1086" alt="image" src="https://github.com/user-attachments/assets/d24f2fda-902a-4b94-8cef-734e9e202051" />
 
 ---
 
