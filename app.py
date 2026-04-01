@@ -6,6 +6,7 @@ from services.ebook import generate_pdf
 
 app = Flask(__name__)
 OUTPUT_DIR = "outputs"
+os.makedirs(OUTPUT_DIR, exist_ok=True)
 
 
 @app.route("/")
@@ -46,5 +47,4 @@ def generate():
 
 
 if __name__ == "__main__":
-    os.makedirs(OUTPUT_DIR, exist_ok=True)
     app.run(debug=True)
